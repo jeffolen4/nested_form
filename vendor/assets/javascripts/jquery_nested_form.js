@@ -59,7 +59,7 @@
       return new Date().getTime();
     },
     insertFields: function(content, assoc, link) {
-      var $tr = $(link).closest('tr');
+      var $tr = $(link).closest('tr',$('table'));
       if ($tr.length > 0) {
         return $(content).insertBefore($tr);
       } else {
@@ -70,7 +70,7 @@
           return $(content).insertBefore(link);
         }
       }
-    },    
+    },
     removeFields: function(e) {
       var $link = $(e.currentTarget),
           assoc = $link.data('association'); // Name of child to be removed
